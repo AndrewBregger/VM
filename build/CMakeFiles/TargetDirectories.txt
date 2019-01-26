@@ -1,0 +1,4 @@
+/Users/andy/Documents/Vm/build/CMakeFiles/rebuild_cache.dir
+/Users/andy/Documents/Vm/build/CMakeFiles/edit_cache.dir
+/Users/andy/Documents/Vm/build/CMakeFiles/vm-test.dir
+/Users/andy/Documents/Vm/build/CMakeFiles/vmlib.dir

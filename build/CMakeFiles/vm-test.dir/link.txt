@@ -1,0 +1,1 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/vm-test.dir/main.cpp.o  -o vm-test  -L/Users/andy/Documents/Vm/lib -Wl,-rpath,/Users/andy/Documents/Vm/lib libvmlib.a 
