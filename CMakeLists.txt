@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.0)
-project(vm-test)
+
+project(vmlib)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_BUILD_TYPE Debug)
+
 
 set(VM_SOURCE   vm.hpp
                 vm.cpp
@@ -20,13 +22,14 @@ set(VM_SOURCE   vm.hpp
 add_library(vmlib STATIC ${VM_SOURCE})
 
 set_target_properties(vmlib PROPERTIES
-    CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/lib"
-    CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/lib")
+    ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/lib"
+)
+
+install(TARGETS vmlib ARCHIVE DESTINATION "${PROJECT_SOURCE_DIR}/lib" COMPONENT VMLIB )
+export ( TARGETS vmlib FILE vmlib-config.cmake)
 
 link_directories("${PROJECT_SOURCE_DIR}/lib")
 
 add_executable(vm-test main.cpp)
-set_target_properties(vm-test PROPERTIES
-    CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")
 
 TARGET_LINK_LIBRARIES(vm-test vmlib)
